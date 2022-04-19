@@ -8,7 +8,9 @@
     </section>
     <div class="row">
         <div class="col-md-12">
-            <a href="{{ route('nik.naker.create') }}" class="btn btn-primary btn-md mb-2">Tambah</a>
+            <div class="card card-primary p-3">
+                <div class="card-bpdy">
+                    <a href="{{ route('nik.naker.create') }}" class="btn btn-primary btn-md mb-2">Tambah</a>
 
             <div class="table-responsive">
                 <table class="table table-striped mb-0">
@@ -80,6 +82,11 @@
                     </tbody>
                 </table>
             </div>
+                </div>
+            </div>
+
+
+            
             
         </div>
     </div>
