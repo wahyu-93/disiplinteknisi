@@ -15,7 +15,10 @@
 
                         <div class="form-group">
                             <label for="pendidikan">Pendidikan</label>
-                            <input type="text" name="pendidikan" id="pendidikan" class="form-control">
+                            <input type="text" name="pendidikan" id="pendidikan" class="form-control" {{ $errors->has('pendidikan') ? 'is-invalid' : '' }} value="{{ old('pendidikan') }}">
+                            <span class="text-danger text-small">
+                                {{ $errors->first('pendidikan') }}
+                            </span>
                         </div>
 
                         <div class="form-group">
@@ -27,28 +30,50 @@
         </div>
 
         <div class="col-md-8">
-            <div class="card card-statistic-1">
-                <div class="card-body p-0">
-                    <div class="table-responsive">
-                        <table class="table table-striped mb-0">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Pendidikan</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Pendidikan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
 
-                            <tbody>
-                                <tr>
-                                    <td>#</td>
-                                    <td>1</td>
-                                    <td>aa</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                    <tbody>
+                        @forelse ($pendidikans as $pendidikan)
+                            <tr>
+                                <td>#</td>
+                                <td>{{ $pendidikan->pendidikan }}</td>
+                                <td>
+                                    <form action="{{ route('pendidikan.destroy', [$pendidikan->id]) }}" method="POST">
+                                        @csrf
+                                        @method('delete')
+
+                                        <a href="{{ route('pendidikan.edit', [$pendidikan->id]) }}" class="btn btn-success btn-sm">
+                                            <span>
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </span>
+                                        </a>
+
+                                        <button type="submit" class="btn btn-danger btn-sm">
+                                            <span>
+                                                <i class="fas fa-trash"></i>
+                                            </span>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>    
+                        @empty
+                            <tr>
+                                <td colspan="3" class="text-center">
+                                    <h5>Data Tidak Ada</h5>
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
