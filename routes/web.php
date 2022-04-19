@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DirektoratController;
 use App\Http\Controllers\MitraController;
+use App\Http\Controllers\NikNakerController;
 use App\Http\Controllers\PendidikanController;
 use App\Http\Controllers\PosisiMitraController;
 use Illuminate\Support\Facades\Route;
@@ -29,3 +30,7 @@ Route::resource('pendidikan', PendidikanController::class);
 Route::resource('direktorat', DirektoratController::class);
 Route::resource('mitra', MitraController::class);
 Route::resource('posisi', PosisiMitraController::class);
+
+Route::get('nik-naker', [NikNakerController::class, 'index'])->name('nik.naker.index');
+Route::get('nik-naker/create', [NikNakerController::class, 'create'])->name('nik.naker.create');
+Route::post('nik-naker/store', [NikNakerController::class, 'store'])->name('nik.naker.store');

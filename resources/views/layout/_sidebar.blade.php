@@ -20,6 +20,6 @@
               <li><a class="nav-link" href="{{ route('posisi.index') }}">Posisi Mitra</a></li>
             </ul>
           </li>
-          <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Naker</span></a></li>
+          <li><a class="nav-link" href="{{ route('nik.naker.index') }}"><i class="far fa-square"></i> <span>Permintaan NIK Naker</span></a></li>
       </ul>  
     </aside>
