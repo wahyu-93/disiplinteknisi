@@ -12,4 +12,9 @@ class NikNakerController extends Controller
         $nakers = Naker::get();
         return view('transaksi.nikNaker.index', compact('nakers'));
     }
+
+    public function create()
+    {
+        return view('transaksi.nikNaker.create');
+    }
 }
