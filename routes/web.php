@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\DirektoratController;
+use App\Http\Controllers\MitraController;
 use App\Http\Controllers\PendidikanController;
+use App\Http\Controllers\PosisiMitraController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +26,6 @@ Route::get('/dashboard',function(){
 });
 
 Route::resource('pendidikan', PendidikanController::class);
+Route::resource('direktorat', DirektoratController::class);
+Route::resource('mitra', MitraController::class);
+Route::resource('posisi', PosisiMitraController::class);

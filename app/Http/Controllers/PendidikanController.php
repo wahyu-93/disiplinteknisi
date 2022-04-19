@@ -20,7 +20,7 @@ class PendidikanController extends Controller
         ]);
 
         Pendidikan::create([
-            'pendidikan'    => strtoupper($request->pendidikan)
+            'pendidikan'    => $request->pendidikan
         ]);
 
         return redirect()->back();
@@ -39,7 +39,7 @@ class PendidikanController extends Controller
         ]);
 
         $pendidikan->update([
-            'pendidikan'    => strtoupper($request->pendidikan)
+            'pendidikan'    => $request->pendidikan
         ]);
 
         return redirect()->route('pendidikan.index');

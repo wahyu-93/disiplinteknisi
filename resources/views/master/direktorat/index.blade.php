@@ -3,21 +3,21 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Data Pendidikan</h1>
+            <h1>Data Direktorat</h1>
         </div>
     </section>
     <div class="row">
         <div class="col-md-4">
             <div class="card card-statistic-1">
                 <div class="card-body">
-                    <form action="{{ route('pendidikan.store') }}" method="POST">
+                    <form action="{{ route('direktorat.store') }}" method="POST">
                         @csrf
 
                         <div class="form-group">
-                            <label for="pendidikan">Pendidikan</label>
-                            <input type="text" name="pendidikan" id="pendidikan" class="form-control" {{ $errors->has('pendidikan') ? 'is-invalid' : '' }} value="{{ old('pendidikan') }}">
+                            <label for="direktorat">Direktorat</label>
+                            <input type="text" name="direktorat" id="direktorat" class="form-control" {{ $errors->has('direktorat') ? 'is-invalid' : '' }} value="{{ old('direktorat') }}">
                             <span class="text-danger text-small">
-                                {{ $errors->first('pendidikan') }}
+                                {{ $errors->first('direktorat') }}
                             </span>
                         </div>
 
@@ -35,22 +35,22 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Pendidikan</th>
+                            <th>Direktorat</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        @forelse ($pendidikans as $pendidikan)
+                        @forelse ($direktorats as $direktorat)
                             <tr>
                                 <td>#</td>
-                                <td>{{ strtoupper($pendidikan->pendidikan) }}</td>
+                                <td>{{ ucwords($direktorat->direktorat) }}</td>
                                 <td>
-                                    <form action="{{ route('pendidikan.destroy', [$pendidikan->id]) }}" method="POST">
+                                    <form action="{{ route('direktorat.destroy', [$direktorat->id]) }}" method="POST">
                                         @csrf
                                         @method('delete')
 
-                                        <a href="{{ route('pendidikan.edit', [$pendidikan->id]) }}" class="btn btn-success btn-sm">
+                                        <a href="{{ route('direktorat.edit', [$direktorat->id]) }}" class="btn btn-success btn-sm">
                                             <span>
                                                 <i class="fas fa-pencil-alt"></i>
                                             </span>

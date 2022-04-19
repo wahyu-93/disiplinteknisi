@@ -3,21 +3,21 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Data Pendidikan</h1>
+            <h1>Data Mitra</h1>
         </div>
     </section>
     <div class="row">
         <div class="col-md-4">
             <div class="card card-statistic-1">
                 <div class="card-body">
-                    <form action="{{ route('pendidikan.store') }}" method="POST">
+                    <form action="{{ route('mitra.store') }}" method="POST">
                         @csrf
 
                         <div class="form-group">
-                            <label for="pendidikan">Pendidikan</label>
-                            <input type="text" name="pendidikan" id="pendidikan" class="form-control" {{ $errors->has('pendidikan') ? 'is-invalid' : '' }} value="{{ old('pendidikan') }}">
+                            <label for="mitra">Mitra</label>
+                            <input type="text" name="mitra" id="mitra" class="form-control" {{ $errors->has('mitra') ? 'is-invalid' : '' }} value="{{ old('mitra') }}">
                             <span class="text-danger text-small">
-                                {{ $errors->first('pendidikan') }}
+                                {{ $errors->first('mitra') }}
                             </span>
                         </div>
 
@@ -35,22 +35,22 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Pendidikan</th>
+                            <th>mitra</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        @forelse ($pendidikans as $pendidikan)
+                        @forelse ($mitras as $mitra)
                             <tr>
                                 <td>#</td>
-                                <td>{{ strtoupper($pendidikan->pendidikan) }}</td>
+                                <td>{{ ucwords($mitra->mitra) }}</td>
                                 <td>
-                                    <form action="{{ route('pendidikan.destroy', [$pendidikan->id]) }}" method="POST">
+                                    <form action="{{ route('mitra.destroy', [$mitra->id]) }}" method="POST">
                                         @csrf
                                         @method('delete')
 
-                                        <a href="{{ route('pendidikan.edit', [$pendidikan->id]) }}" class="btn btn-success btn-sm">
+                                        <a href="{{ route('mitra.edit', [$mitra->id]) }}" class="btn btn-success btn-sm">
                                             <span>
                                                 <i class="fas fa-pencil-alt"></i>
                                             </span>

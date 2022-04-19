@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class PosisiMitra extends Model
 {
     use HasFactory;
+
+    protected $table = 'posisi_mitras';
+    protected $fillable = ['posisi'];
 }

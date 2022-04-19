@@ -15,9 +15,9 @@
             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Master</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="{{ route('pendidikan.index') }}">Pendidikan</a></li>
-              <li><a class="nav-link" href="layout-transparent.html">Direktorat</a></li>
-              <li><a class="nav-link" href="layout-top-navigation.html">Mitra</a></li>
-              <li><a class="nav-link" href="layout-top-navigation.html">Posisi Mitra</a></li>
+              <li><a class="nav-link" href="{{ route('direktorat.index') }}">Direktorat</a></li>
+              <li><a class="nav-link" href="{{ route('mitra.index') }}">Mitra</a></li>
+              <li><a class="nav-link" href="{{ route('posisi.index') }}">Posisi Mitra</a></li>
             </ul>
           </li>
           <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Naker</span></a></li>
