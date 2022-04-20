@@ -7,7 +7,12 @@
         </div>
     </section>
 
-    <form action="" method="POST">
+    <form action="{{ route('nik.naker.store') }}" method="POST">
+        @csrf
+        <div class="form-group">
+            <button class="btn btn-primary btn-md">Simpan</button>
+        </div>
+
         <div class="row">
             <div class="col-md-4">
                 <div class="card card-primary">
@@ -141,7 +146,10 @@
                         <div class="form-group">
                             <label for="pendidikan">Pendidikan</label>
                             <select name="pendidikan" id="pendidikan" class="form-control">
-                                <option value="">Pilih Pendidikan</option>
+                                <option value="" class="text-muted">Pilih Pendidikan</option>
+                                @foreach ($pendidikans as $pendidikan)
+                                    <option value="{{ $pendidikan->id }}">{{ $pendidikan->pendidikan }}</option>                                    
+                                @endforeach
                             </select>
                             
                             <span class="text-danger text-small">
@@ -152,7 +160,10 @@
                         <div class="form-group">
                             <label for="direktorat">Direktorat</label>
                             <select name="direktorat" id="direktorat" class="form-control">
-                                <option value="">Pilih Direktorat</option>
+                                <option value="" class="text-muted">Pilih Direktorat</option>
+                                @foreach ($direktorats as $direktorat)
+                                    <option value="{{ $direktorat->id }}">{{ $direktorat->direktorat }}</option>                                    
+                                @endforeach
                             </select>
                             
                             <span class="text-danger text-small">
@@ -163,7 +174,10 @@
                         <div class="form-group">
                             <label for="posisi">Posisi</label>
                             <select name="posisi" id="posisi" class="form-control">
-                                <option value="">Pilih Posisi</option>
+                                <option value="" class="text-muted">Pilih Posisi</option>
+                                @foreach ($posisis as $posisi)
+                                    <option value="{{ $posisi->id }}">{{ $posisi->posisi }}</option>                                    
+                                @endforeach
                             </select>
                             
                             <span class="text-danger text-small">
@@ -174,7 +188,10 @@
                         <div class="form-group">
                             <label for="mitra">Mitra</label>
                             <select name="mitra" id="mitra" class="form-control">
-                                <option value="">Pilih Mitra</option>
+                                <option value="" class="text-muted">Pilih Mitra</option>
+                                @foreach ($mitras as $mitra)
+                                    <option value="{{ $mitra->id }}">{{ $mitra->mitra }}</option>                                    
+                                @endforeach
                             </select>
                             
                             <span class="text-danger text-small">
