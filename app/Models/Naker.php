@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Naker extends Model
 {
     use HasFactory;
+
+    protected $guarderd = ['nik', 'status_naker'];
 }
