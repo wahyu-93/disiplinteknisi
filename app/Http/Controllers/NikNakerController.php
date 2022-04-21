@@ -11,14 +11,25 @@ use Illuminate\Http\Request;
 
 class NikNakerController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $nakers = Naker::with('pendidikan')
+        if($request->has('q')){
+            $nakers = Naker::with('pendidikan')
+                    ->with('direktorat')
+                    ->with('mitra')
+                    ->with('posisiMitra')
+                    ->where('no_ktp', $request->input('q'))
+                    ->first();    
+        }
+        else {
+            $nakers = Naker::with('pendidikan')
                     ->with('direktorat')
                     ->with('mitra')
                     ->with('posisiMitra')
                     ->get();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
+       
+        };
+                                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
         return view('transaksi.nikNaker.index', compact('nakers'));
     }
 

@@ -13,11 +13,11 @@
                     <a href="{{ route('nik.naker.create') }}" class="btn btn-primary btn-md mb-2">Tambah</a>
                     
                     <div class="form-group float-right">
-                        <form action="">
+                        <form method="get">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Cari Berdasarkan KTP...">
+                                <input type="text" class="form-control" placeholder="Cari Berdasarkan NIK KTP" name="q">
                                 <div class="input-group-prepend">
-                                  <button class="btn btn-outline-secondary" type="button">
+                                  <button class="btn btn-outline-secondary" type="submit">
                                       <span>
                                           <i class="fas fa-search"></i>
                                       </span>
