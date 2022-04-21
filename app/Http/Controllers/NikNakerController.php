@@ -14,6 +14,7 @@ class NikNakerController extends Controller
     public function index()
     {
         $nakers = Naker::get();
+        dd($nakers);
         return view('transaksi.nikNaker.index', compact('nakers'));
     }
 
@@ -35,14 +36,14 @@ class NikNakerController extends Controller
             'tgl_lahir' => 'required',
             'kelamin' => 'required',
             'alamat' => 'required',
-            'ktp' => 'required',
+            'no_ktp' => 'required|unique:nakers',
             'kk' => 'required',
-            'bpjs' => 'nullable',
-            'npwp' => 'nullable',
+            'no_kartu_bpjs' => 'nullable|unique:nakers',
+            'no_npwp' => 'nullable|unique:nakers',
             'noHp' => 'required',
             'nama_keluarga' => 'required',
             'noHpKeluarga' => 'required',
-            'email' => 'required',
+            'email' => 'required||unique:nakers',
             'witel' => 'required',
             'pendidikan' => 'required',
             'direktorat' => 'required',
@@ -57,11 +58,12 @@ class NikNakerController extends Controller
             'nama'          => $request->nama,
             'tgl_lahir'     => $request->tgl_lahir,
             'tempat_lahir'  => $request->tmp_lahir,
+            'jenis_kelamin' => $request->kelamin,
             'alamat'        => $request->alamat,
-            'no_ktp'        => $request->ktp,
+            'no_ktp'        => $request->no_ktp,
             'no_kk'         => $request->kk,
-            'no_kartu_bpjs' => $request->bpjs,
-            'no_npwp'       => $request->npwp,
+            'no_kartu_bpjs' => $request->no_kartu_bpjs,
+            'no_npwp'       => $request->no_npwp,
             'no_hp'         => $request->noHp,
             'no_hp_keluarga'=> $request->noHpKeluarga,
             'nama_keluarga' => $request->nama_keluarga,
@@ -73,7 +75,7 @@ class NikNakerController extends Controller
             'mitra_id'      => $request->mitra,
             'tgl_pengajuan' => $request->tgl_pengajuan,
             'nik_waspang'   => $request->nik_waspang,
-            'regional'      => $request->regional
+            'regional'      => $request->regional,
         ]);
 
         return redirect()->route('nik.naker.index');

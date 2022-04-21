@@ -19,7 +19,7 @@ class CreateNakersTable extends Migration
             $table->string('nama',200);
             $table->date('tgl_lahir');
             $table->string('tempat_lahir');
-            $table->char('jenis_kelamin');
+            $table->string('jenis_kelamin',1);
             $table->text('alamat');
             $table->string('no_ktp', 16);
             $table->string('no_kk', 16);
@@ -30,7 +30,7 @@ class CreateNakersTable extends Migration
             $table->string('nama_keluarga',200);
             $table->string('email', 50);
             $table->string('witel', 30);
-            $table->char('status_naker');
+            $table->boolean('status_naker')->default(3);
             
             $table->foreignId('pendidikan_id')->constrained('pendidikans')->onDelete('cascade');
             $table->foreignId('direktorat_id')->constrained('direktorats')->onDelete('cascade');

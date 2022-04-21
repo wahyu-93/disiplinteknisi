@@ -17,6 +17,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Status Naker</th>
                             <th>NIK</th>
                             <th>Nama</th>
                             <th>Tgl Lahir</th>
@@ -32,7 +33,6 @@
                             <th>Keluarga Bisa Dihubungi</th>
                             <th>Email</th>
                             <th>Witel</th>
-                            <th>Status Naker</th>
                             <th>Pendidikan</th>
                             <th>Direktorat</th>
                             <th>Posisi</th>
@@ -46,30 +46,34 @@
                     <tbody>
                         @forelse ($nakers as $naker)
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>#</td>
+                                <td>
+                                    <span class="badge badge-danger">
+                                        Proses NIK
+                                    </span>
+                                </td>
+                                <td>{{ $naker->nik }}</td>
+                                <td>{{ $naker->nama }}</td>
+                                <td>{{ $naker->tgl_lahir }}</td>
+                                <td>{{ $naker->tempat_lahir }}</td>
+                                <td>{{ $naker->jenis_kelamin }}</td>
+                                <td>{{ $naker->alamat }}</td>
+                                <td>{{ $naker->no_ktp}}</td>
+                                <td>{{$naker->no_kk }}</td>
+                                <td>{{$naker->no_kartu_bpjs }}</td>
+                                <td>{{$naker->no_npwp }}</td>
+                                <td>{{$naker->no_hp }}</td>
+                                <td>{{$naker->no_hp_keluarga }}</td>
+                                <td>{{$naker->nama_keluarga }}</td>
+                                <td>{{$naker->email }}</td>
+                                <td>{{$naker->witel }}</td>
+                                <td>{{$naker->pendidikan_id }}</td>
+                                <td>{{$naker->direktorat_id }}</td>
+                                <td>{{$naker->posisi_id }}</td>
+                                <td>{{$naker->mitra_id }}</td>
+                                <td>{{$naker->tgl_pengajuan }}</td>
+                                <td>{{$naker->nik_waspang }}</td>
+                                <td>{{$naker->regional }}</td>
                             </tr>
                         @empty
                             <tr>

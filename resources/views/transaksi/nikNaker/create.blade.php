@@ -60,10 +60,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="ktp">NIK KTP</label>
-                            <input type="number" name="ktp" id="ktp" class="form-control" value="{{ old('ktp') }}" {{ $errors->has('ktp') ? 'is-invalid' : '' }}>
+                            <label for="no_ktp">NIK KTP</label>
+                            <input type="number" name="no_ktp" id="no_ktp" class="form-control" value="{{ old('no_ktp') }}" {{ $errors->has('no_ktp') ? 'is-invalid' : '' }}>
                             <span class="text-danger text-small">
-                                {{ $errors->first('ktp') }}
+                                {{ $errors->first('no_ktp') }}
                             </span>
                         </div>
 
@@ -82,18 +82,18 @@
                 <div class="card card-primary">
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="bpjs">No BPJS</label>
-                            <input type="number" name="bpjs" id="bpjs" class="form-control" value="{{ old('bpjs') }}" {{ $errors->has('bpjs') ? 'is-invalid' : '' }}>
+                            <label for="no_kartu_bpjs">No BPJS</label>
+                            <input type="number" name="no_kartu_bpjs" id="no_kartu_bpjs" class="form-control" value="{{ old('no_kartu_bpjs') }}" {{ $errors->has('no_kartu_bpjs') ? 'is-invalid' : '' }}>
                             <span class="text-danger text-small">
-                                {{ $errors->first('bpjs') }}
+                                {{ $errors->first('no_kartu_bpjs') }}
                             </span>
                         </div>
 
                         <div class="form-group">
-                            <label for="npwp">NPWP</label>
-                            <input type="number" name="npwp" id="npwp" class="form-control" value="{{ old('npwp') }}" {{ $errors->has('npwp') ? 'is-invalid' : '' }}>
+                            <label for="no_npwp">NPWP</label>
+                            <input type="number" name="no_npwp" id="no_npwp" class="form-control" value="{{ old('no_npwp') }}" {{ $errors->has('no_npwp') ? 'is-invalid' : '' }}>
                             <span class="text-danger text-small">
-                                {{ $errors->first('npwp') }}
+                                {{ $errors->first('no_npwp') }}
                             </span>
                         </div>
 
@@ -107,7 +107,7 @@
 
                         <div class="form-group">
                             <label for="nama_keluarga">Nama Keluarga Bisa Dihubungi</label>
-                            <input type="number" name="nama_keluarga" id="nama_keluarga" class="form-control" value="{{ old('nama_keluarga') }}" {{ $errors->has('nama_keluarga') ? 'is-invalid' : '' }}>
+                            <input type="text" name="nama_keluarga" id="nama_keluarga" class="form-control" value="{{ old('nama_keluarga') }}" {{ $errors->has('nama_keluarga') ? 'is-invalid' : '' }}>
                             <span class="text-danger text-small">
                                 {{ $errors->first('nama_keluarga') }}
                             </span>
@@ -148,7 +148,7 @@
                             <select name="pendidikan" id="pendidikan" class="form-control">
                                 <option value="" class="text-muted">Pilih Pendidikan</option>
                                 @foreach ($pendidikans as $pendidikan)
-                                    <option value="{{ $pendidikan->id }}">{{ $pendidikan->pendidikan }}</option>                                    
+                                    <option value="{{ $pendidikan->id }}">{{ strtoupper($pendidikan->pendidikan) }}</option>                                    
                                 @endforeach
                             </select>
                             
@@ -162,7 +162,7 @@
                             <select name="direktorat" id="direktorat" class="form-control">
                                 <option value="" class="text-muted">Pilih Direktorat</option>
                                 @foreach ($direktorats as $direktorat)
-                                    <option value="{{ $direktorat->id }}">{{ $direktorat->direktorat }}</option>                                    
+                                    <option value="{{ $direktorat->id }}">{{ ucwords($direktorat->direktorat) }}</option>                                    
                                 @endforeach
                             </select>
                             
@@ -176,7 +176,7 @@
                             <select name="posisi" id="posisi" class="form-control">
                                 <option value="" class="text-muted">Pilih Posisi</option>
                                 @foreach ($posisis as $posisi)
-                                    <option value="{{ $posisi->id }}">{{ $posisi->posisi }}</option>                                    
+                                    <option value="{{ $posisi->id }}">{{ ucwords($posisi->posisi) }}</option>                                    
                                 @endforeach
                             </select>
                             
@@ -190,7 +190,7 @@
                             <select name="mitra" id="mitra" class="form-control">
                                 <option value="" class="text-muted">Pilih Mitra</option>
                                 @foreach ($mitras as $mitra)
-                                    <option value="{{ $mitra->id }}">{{ $mitra->mitra }}</option>                                    
+                                    <option value="{{ $mitra->id }}">{{ ucwords($mitra->mitra) }}</option>                                    
                                 @endforeach
                             </select>
                             
@@ -201,7 +201,7 @@
 
                         <div class="form-group">
                             <label for="tgl_pengajuan">Tanggal Pengajuan</label>
-                            <input type="date" name="tgl_pengajuan" id="tgl_pengajuan" class="form-control" value="{{ old('tgl_pengajuan') }}" {{ $errors->has('tgl_pengajuan') ? 'is-invalid' : '' }}>
+                            <input type="date" name="tgl_pengajuan" id="tgl_pengajuan" class="form-control" value="{{ old('tgl_pengajuan') }}" {{ $errors->has('tgl_pengajuan') ? 'is-invalid' : '' }} >
                             <span class="text-danger text-small">
                                 {{ $errors->first('tgl_pengajuan') }}
                             </span>

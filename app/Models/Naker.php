@@ -9,5 +9,10 @@ class Naker extends Model
 {
     use HasFactory;
 
-    protected $guarderd = ['nik', 'status_naker'];
+    protected $guarded = ['nik', 'status_naker'];
+
+    public function pendidikan()
+    {
+        return $this->belongsTo(Pendidikan::class);
+    }
 }
