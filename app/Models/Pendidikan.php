@@ -10,9 +10,4 @@ class Pendidikan extends Model
     use HasFactory;
 
     protected $fillable = ['pendidikan'];
-
-    public function nakers()
-    {
-        return $this->hasMany(Naker::class);
-    }
 }

@@ -13,8 +13,12 @@ class NikNakerController extends Controller
 {
     public function index()
     {
-        $nakers = Naker::get();
-        dd($nakers);
+        $nakers = Naker::with('pendidikan')
+                    ->with('direktorat')
+                    ->with('mitra')
+                    ->with('posisiMitra')
+                    ->get();
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
         return view('transaksi.nikNaker.index', compact('nakers'));
     }
 
