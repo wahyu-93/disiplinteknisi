@@ -19,7 +19,7 @@ class NikNakerController extends Controller
                     ->with('mitra')
                     ->with('posisiMitra')
                     ->where('no_ktp', $request->input('q'))
-                    ->first();    
+                    ->get();    
         }
         else {
             $nakers = Naker::with('pendidikan')
@@ -29,7 +29,7 @@ class NikNakerController extends Controller
                     ->get();
        
         };
-                                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ;
         return view('transaksi.nikNaker.index', compact('nakers'));
     }
 
