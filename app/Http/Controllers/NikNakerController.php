@@ -103,4 +103,16 @@ class NikNakerController extends Controller
 
         return back();
     }
+
+    public function edit($id)
+    {
+        $naker = Naker::findOrFail($id);
+
+        $pendidikans = Pendidikan::get();
+        $direktorats = Direktorat::get();
+        $mitras = Mitra::get();
+        $posisis = PosisiMitra::get();
+
+        return view('transaksi.nikNaker.edit', compact('pendidikans', 'direktorats', 'mitras', 'posisis', 'naker'));
+    }
 }
