@@ -32,6 +32,7 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th>Aksi</th>
                                     <th>Status Naker</th>
                                     <th>NIK</th>
                                     <th>Nama</th>
@@ -62,6 +63,24 @@
                                 @forelse ($nakers as $naker)
                                     <tr>
                                         <td>#</td>
+                                        <td>
+                                            <form action="{{ route('nik.naker.delete', [$naker->id]) }}" method="POST">
+                                                @csrf
+                                                @method('delete')
+
+                                                <a href="{{ route('nik.naker.edit', [$naker]) }}" class="btn btn-success btn-sm">
+                                                    <span>
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                    </span>
+                                                </a>
+                                                
+                                                <button type="submit" class="btn btn-danger btn-sm">
+                                                    <span>
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </span>
+                                                </button>
+                                            </form>
+                                        </td>
                                         <td>
                                             <span class="badge badge-danger">
                                                 Proses NIK

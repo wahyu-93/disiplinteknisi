@@ -95,4 +95,12 @@ class NikNakerController extends Controller
 
         return redirect()->route('nik.naker.index');
     }
+
+    public function delete($id)
+    {
+        $naker = Naker::findOrFail($id);
+        $naker->delete();
+
+        return back();
+    }
 }

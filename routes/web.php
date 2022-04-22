@@ -34,3 +34,6 @@ Route::resource('posisi', PosisiMitraController::class);
 Route::get('nik-naker', [NikNakerController::class, 'index'])->name('nik.naker.index');
 Route::get('nik-naker/create', [NikNakerController::class, 'create'])->name('nik.naker.create');
 Route::post('nik-naker/store', [NikNakerController::class, 'store'])->name('nik.naker.store');
+Route::get('nik-naker/{id}/edit', [NikNakerController::class, 'edit'])->name('nik.naker.edit');
+Route::put('nik-naker/{id}/edit', [NikNakerController::class, 'update'])->name('nik.naker.update');
+Route::delete('nik-naker/{id}', [NikNakerController::class, 'delete'])->name('nik.naker.delete');
