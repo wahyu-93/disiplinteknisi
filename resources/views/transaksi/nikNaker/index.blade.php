@@ -12,6 +12,8 @@
                 <div class="card-body">
                     <a href="{{ route('nik.naker.create') }}" class="btn btn-primary btn-md mb-2">Tambah</a>
                     
+                    <a href="" class="btn btn-success btn-md mb-2">Kirim Email</a>
+
                     <div class="form-group float-right">
                         <form method="get">
                             <div class="input-group">
@@ -41,12 +43,7 @@
                                     <th>Jenis Kelamin</th>
                                     <th>Alamat</th>
                                     <th>No KTP</th>
-                                    <th>NO KK</th>
-                                    <th>NO BPJS</th>
-                                    <th>NPWP</th>
-                                    <th>No HP</th>
-                                    <th>No HP Keluarga</th>
-                                    <th>Keluarga Bisa Dihubungi</th>
+                                   
                                     <th>Email</th>
                                     <th>Witel</th>
                                     <th>Pendidikan</th>
@@ -68,11 +65,11 @@
                                                 @csrf
                                                 @method('delete')
 
-                                                <a href="{{ route('nik.naker.edit', [$naker]) }}" class="btn btn-success btn-sm">
+                                                {{-- <a href="{{ route('nik.naker.edit', [$naker]) }}" class="btn btn-success btn-sm">
                                                     <span>
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </span>
-                                                </a>
+                                                </a> --}}
                                                 
                                                 <button type="submit" class="btn btn-danger btn-sm">
                                                     <span>
@@ -82,8 +79,14 @@
                                             </form>
                                         </td>
                                         <td>
-                                            <span class="badge badge-danger">
+                                            <span class="badge badge-danger mb-1 mt-1">
                                                 Proses NIK
+                                            </span>
+
+                                            <span>
+                                                <a href="" class="badge badge-success mt-1 mb-1">
+                                                    Kirim
+                                                </a>
                                             </span>
                                         </td>
                                         <td>{{ $naker->nik }}</td>
@@ -93,12 +96,7 @@
                                         <td>{{ $naker->jenis_kelamin }}</td>
                                         <td>{{ $naker->alamat }}</td>
                                         <td>{{ $naker->no_ktp}}</td>
-                                        <td>{{ $naker->no_kk }}</td>
-                                        <td>{{ $naker->no_kartu_bpjs }}</td>
-                                        <td>{{ $naker->no_npwp }}</td>
-                                        <td>{{ $naker->no_hp }}</td>
-                                        <td>{{ $naker->no_hp_keluarga }}</td>
-                                        <td>{{ $naker->nama_keluarga }}</td>
+                                        
                                         <td>{{ $naker->email }}</td>
                                         <td>{{ $naker->witel }}</td>
 
