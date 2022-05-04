@@ -1,4 +1,4 @@
-Dibangun dengan menggunakan base PHP dan Framework Laravel Versi 8 [onpregress]
+Dibangun dengan menggunakan base PHP dan Framework Laravel Versi 8 [onprogress]
 
 hal yang dilakukan sebelumnya adalah :
 1. instal laravel versi 8 terlebih dahulu dengan cara 
